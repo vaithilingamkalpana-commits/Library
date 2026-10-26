@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Club Management Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>College Club Management Portal</h1>
+    <p>Jawaharlal Nehru College for Women</p>
+  </header>
+
+  <main>
+    <section class="panel" id="register-section">
+      <h2>Member Registration</h2>
+      <form id="regForm" novalidate>
+        <div class="field"><label for="name">Name</label>
+          <input type="text" id="name" placeholder="Full name"><small class="err" id="nameErr"></small></div>
+        <div class="field"><label for="regNo">Register Number</label>
+          <input type="text" id="regNo" placeholder="Digits only"><small class="err" id="regNoErr"></small></div>
+        <div class="field"><label for="email">Email</label>
+          <input type="email" id="email" placeholder="name@example.com"><small class="err" id="emailErr"></small></div>
+        <div class="field"><label for="phone">Phone</label>
+          <input type="text" id="phone" placeholder="10-digit mobile"><small class="err" id="phoneErr"></small></div>
+        <div class="field"><label for="dept">Department</label>
+          <select id="dept">
+            <option value="">-- Select --</option>
+            <option>Computer Science</option><option>Mathematics</option>
+            <option>Physics</option><option>Commerce</option><option>English</option>
+          </select><small class="err" id="deptErr"></small></div>
+        <button type="submit" class="primary">Register</button>
+      </form>
+      <p id="status" class="status">Not registered yet. Register to join clubs.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Clubs</h2>
+      <div class="toolbar">
+        <input type="text" id="searchInput" placeholder="Search clubs...">
+        <select id="categoryFilter"></select>
+      </div>
+      <div id="clubGrid" class="grid"></div>
+    </section>
+
+    <section class="panel" id="detailsSection" hidden>
+      <h2 id="dName"></h2>
+      <p><b>Category:</b> <span id="dCategory"></span></p>
+      <p id="dDesc"></p>
+      <p><b>Coordinator:</b> <span id="dCoord"></span></p>
+      <p><b>Meetings:</b> <span id="dMeet"></span></p>
+      <h3>Club Members (<span id="dCount">0</span>)</h3>
+      <ul id="memberList"></ul>
+    </section>
+  </main>
+
+  <footer>Developed by V. Kalpana | II B.Sc (CS)</footer>
+  <script src="script.js"></script>
+</body>
+</html>
